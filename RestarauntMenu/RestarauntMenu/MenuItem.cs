@@ -25,5 +25,33 @@ namespace RestarauntMenu
         public string Description { get => description; set => description = value; }
         public string Category { get => category; set => category = value; }
         public bool Status { get => status; set => status = value; }
+
+        public string New()
+        {
+            if (this.Status == true)
+            {
+                return "New!";
+            }
+            return " "; 
+        }
+        public override Boolean Equals(object toBeCompared)
+        {
+            if (toBeCompared == this)
+            {
+                return true;
+            }
+
+            if (toBeCompared == null)
+            {
+                return false;
+            }
+            if (toBeCompared.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            MenuItem s = toBeCompared as MenuItem;
+            return s.Name == Name;
+        }
     }
 }
