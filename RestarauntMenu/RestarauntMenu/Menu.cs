@@ -5,12 +5,12 @@ namespace RestarauntMenu
 {
     public class Menu
     {
-        public DateTime date1 { get; set; }
-        public List<MenuItem> MenuItems;
-        public DateTime date2 = DateTime.Now;
-        public Menu(List<MenuItem> menuItems)
+        public DateTime Date1 { get; set; }
+        public List<MenuItem> MenuItems { get; set; }
+        public Menu(List<MenuItem> menuItems, DateTime date1)
         {
             MenuItems = menuItems;
+            Date1 = date1;
         }
 
         public List<MenuItem> AddItem(MenuItem item)
@@ -37,8 +37,7 @@ namespace RestarauntMenu
         }
         public void LastUpdated ()
         {
-            this.date1 = DateTime.Now;
-            return "The menu was last updated " + this.date1;
+            Console.WriteLine( "The menu was last updated " + Date1);
         }
 
         public void ItemPrint (MenuItem item)

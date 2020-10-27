@@ -13,13 +13,14 @@ namespace RestarauntMenu
             MenuItem turkey2 = new MenuItem("Turkey", 2.50, "turkey", "main course", false);
 
             List<MenuItem> myMenu = new List<MenuItem>();         
-            Menu final = new Menu(myMenu);
+            Menu final = new Menu(myMenu, DateTime.Now);
             final.AddItem(turkey);
             final.AddItem(blt);
             final.AddItem(bananaSplit);
 
             final.MenuPrint();
             final.ItemPrint(turkey);
+            final.LastUpdated();
             
 
             for (int i= 0; i < final.MenuItems.Count; i++)
